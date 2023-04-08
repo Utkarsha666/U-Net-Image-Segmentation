@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Apr  7 15:16:58 2023
-
-@author: utkar
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Wed Apr  5 15:50:38 2023
 
 @author: utkar
@@ -16,15 +9,6 @@ import tensorflow as tf
 from keras import backend as K
 from tensorflow.keras import layers, Model
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dropout, Conv2DTranspose, concatenate
-
-def jaccard_coef(y_true, y_pred):
-    y_true_f = K.flatten(y_true)
-    y_pred_f = K.flatten(y_pred)
-    intersection = K.sum(y_true * y_pred_f)
-    return (intersection + 1.0) / (K.sum(y_true_f) + K.sum(y_pred_f) - intersection + 1.0)
-
-def jaccard_coef_loss(y_true, y_pred):
-    return -jaccard_coef(y_true, y_pred)
 
 
 def unet(IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_CHANNELS):
