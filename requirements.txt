@@ -1,0 +1,6 @@
+tensorflow-2.10
+scikit-learn
+scikit-image
+opencv-python
+pandas
+numpy
