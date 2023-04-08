@@ -4,7 +4,7 @@ Created on Sat Apr  8 00:52:36 2023
 
 @author: utkar
 """
-
+############################################################################################################################################
 import tensorflow as tf
 from unet import unet
 import cv2
@@ -13,6 +13,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from skimage import measure, color, io
 from tensorflow.keras import layers, Model, Sequential
+from tensorflow.keras.models import load_model
 
 IMG_HEIGHT = 128
 IMG_WIDTH = 128
@@ -90,7 +91,7 @@ def segment(images):
     
     print(df.head())
     
-segment('332aa0c67cb2e035e372c7cb3ceca2_jumbo.jpg')
+segment('F1.large.jpg')
 
 def cnn(IMG_HEIGHT, IMG_WIDTH, num_channels=1):
     input_shape = (16, IMG_HEIGHT, IMG_WIDTH, 1) 
@@ -126,8 +127,8 @@ def cnn(IMG_HEIGHT, IMG_WIDTH, num_channels=1):
 def get_class_model():
     return cnn(IMG_HEIGHT, IMG_WIDTH, 1)
 
-class_model = tf.keras.models.load_model("models/class/1")
-#class_model.load_weights("class.h5")
+#class_model = tf.keras.models.load_model("models/class/1")
+class_model = load_model("class.h5", compile="False")
 class_label = []
 import json
 
@@ -152,5 +153,5 @@ def predict(images):
     plt.imshow(test_img.squeeze(), cmap='gray')
     plt.show()
     
-predict('332aa0c67cb2e035e372c7cb3ceca2_jumbo.jpg')
+predict('F1.large.jpg')
     
