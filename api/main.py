@@ -109,7 +109,7 @@ async def predict(
     np_image = transform.resize(np_image, (128, 128, 1))
     img_batch = np.expand_dims(np_image,0)
 
-    # Now predict our image
+    
     predictions = MODEL.predict(img_batch)
 
     predicted_class = np.argmax(predictions[0])
