@@ -135,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   appbar: {
-    background: '#be6a77',
+    background: '#004242',
     boxShadow: 'none',
     color: 'white'
   },
@@ -210,7 +210,7 @@ export const ImageUpload = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="static" className={classes.appbar} style={{ background: '#004242' }}>
+      <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             LUNG SEGMENTATION AND CLASSIFICATION
