@@ -83,7 +83,7 @@ def segment(images):
     props = measure.regionprops_table(markers, intensity_image=img_grey, 
                                   properties=['label',
                                               'area', 'equivalent_diameter',
-                                              'mean_intensity', 'solidity'])
+                                              'mean_intensity', 'axis_major_length', 'axis_minor_length'])
     
     import pandas as pd
     df = pd.DataFrame(props)
