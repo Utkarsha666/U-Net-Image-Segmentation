@@ -5,3 +5,6 @@ scikit-image
 opencv-python
 pandas
 numpy
+matplotlib
+fastapi
+uvicorn
