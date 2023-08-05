@@ -12,3 +12,6 @@ pip install -r requirements.txt
 
 
 i have used tensorflow-2.10+CUDA 11.1.
+
+
+output:- https://youtu.be/ROo6v6G5Zlk
